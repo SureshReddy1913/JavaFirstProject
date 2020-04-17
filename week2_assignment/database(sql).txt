@@ -1,0 +1,28 @@
+CREATE DATABASE PJPpractice;
+
+to display all databases-->\l
+
+to connect to a databse-->\connect pjppractice
+
+to show al tables in a database-->\dt
+
+creating a table --> CREATE TABLE test(id integer,fname char(30));
+
+adding a column to a table --> ALTER TABLE test ADD COLUMN lname char(30);
+
+adding a primary key --> ALTER TABLE test ADD PRIMARY KEY (id)
+
+dropping a column --> ALTER TABLE test DROP COLUMN lname;
+
+renaming a table --> ALTER TABLE test RENAME TO test1;
+
+
+1)SELECT MODULECODE,DURATION FROM MODULES WHERE DURATION<6;
+
+2)SELECT BATCHCODE, TRAINERID, COURSECODE, STARTDATE, CAPACITY,BATCHSTRENGTH FROM BATCHES WHERE TRAINERID = (SELECT TRAINERID FROM TRAINERS WHERE TRAINERNAME = 'KRISHNAN');
+
+3)SELECT MODULENAME FROM MODULES WHERE MODULECODE IN (SELECT MODULECODE FROM COURSEANDMODULES WHERE COURSECODE=100);
+
+4) SELECT A.MODULENAME,B.COURSECODE FROM MODULES A,COURSEANDMODULES B WHERE A.MODULECODE=B.MODULECODE AND A.MODULECODE IN (SELECT MODULECODE FROM MODULES WHERE COURSECODE=100);
+
+5)select coursecode,count(modulecode) as numberofmodules from courseandmodules group by coursecode;

@@ -1,0 +1,24 @@
+
+Creating collection of 12 mems:
+db.employee.insertMany([{id : 1,fname : "karthik",salary : [18000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "gurgaon"},{id : 2,fname : "mahesh",salary : [21000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "gurgaon"},{id : 3,fname : "naresh",salary :[19000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "noida"},{id : 4,fname : "ganesh",salary :[23000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "banglore"},{id : 5,fname : "phani",salary :[29000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "delhi"},{id : 6,fname : "naresh rao",salary :[11000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "gurgaon"},{id : 7,fname : "nishanth",salary :[29000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "hyderabad"},{id : 8,fname : "fayaz",salary :[19000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "noida"},{id : 9,fname : "vamsi",salary :[29000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "gurgaon"},{id : 10,fname : "viru",salary :[15000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "delhi"},{id : 11,fname : "sehwag",salary :[17000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "gurgaon"},{id : 12,fname : "gambi",salary :[29000,21000,22000,25000,26000,30000,310000,19000,15000,20000,30000,10000],city : "Warangal"}])
+
+
+1)db.employee.find().toArray()
+
+2)db.employee.find({},{fname:1}).pretty()
+
+3)db.employee.find({},{id:0}).pretty()
+
+4)db.employee.find().limit(5).pretty()
+
+5)db.employee.find().skip(5).limit(5).pretty()
+
+6)db.employee.find({city : "gurgaon"}).pretty()
+
+7)db.emplyee.find({"salary.0" : {$lt:20000}}).pretty()
+
+8)db.emplyee.find({"salary.0" : {$lt:20000}},"city: "gurgaon").pretty()
+
+9)db.employee.aggregate([{$project:{jan_sal: {$arrayElemAt:["$salary",0]}}},{$group:{_id:null,total:{$sum: "$jan_sal"}}}])
+
+10)db.employee.find({city: "gurgaon"}).count()
