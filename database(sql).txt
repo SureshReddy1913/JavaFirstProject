@@ -1,0 +1,48 @@
+CREATE DATABASE PJPpractice;
+
+to display all databases-->\l
+
+to connect to a databse-->\connect pjppractice
+
+to show al tables in a database-->\dt
+
+creating a table --> CREATE TABLE test(id integer,fname char(30));
+
+adding a column to a table --> ALTER TABLE test ADD COLUMN lname char(30);
+
+adding a primary key --> ALTER TABLE test ADD PRIMARY KEY (id)
+
+dropping a column --> ALTER TABLE test DROP COLUMN lname;
+
+renaming a table --> ALTER TABLE test RENAME TO test1;
+
+
+1)SELECT MODULECODE,DURATION FROM MODULES WHERE DURATION<6;
+
+2)SELECT BATCHCODE, TRAINERID, COURSECODE, STARTDATE, CAPACITY,BATCHSTRENGTH FROM BATCHES WHERE TRAINERID = (SELECT TRAINERID FROM TRAINERS WHERE TRAINERNAME = 'KRISHNAN');
+
+3)SELECT MODULENAME FROM MODULES WHERE MODULECODE IN (SELECT MODULECODE FROM COURSEANDMODULES WHERE COURSECODE=100);
+
+4) select a.coursecode,b.modulename from courseandmodules a LEFT JOIN modules b on a.modulecode=b.modulecode where a.coursecode = 100;
+
+5)select count(modulecode) as numberofModules from courseandmodules where coursecode=100;
+
+6)select a.coursecode,count(b.modulecode) as numberofModules from courses a LEFT JOIN courseandmodules b on a.coursecode=b.coursecode group by a.coursecode;
+
+7)select title,fees from courses where fees=(select max(fees) from courses);
+
+8)select * from students where batchcode=3001;
+
+9)select * from students where place='CHENNAI';
+
+10)select count(*) as LESSTHANSIXDAYS from modules where duration<6;
+
+11)select a.batchcode,b.title,a.startdate from batches a join courses b on a.coursecode=b.coursecode where extract(year from a.startdate)='2012' and extract(month from a.startdate)='05';
+
+12)select b.coursecode,a.title,a.fees from courses a left join batches b on a.coursecode=b.coursecode where extract(month from b.startdate)<>1 and extract(year from b.startdate)<>2012;
+
+13) select a.modulename from modules a join (select a.modulecode from courseandmodules a join courses b on a.coursecode=b.coursecode where title='Oracle DBA') b on a.modulecode = b.modulecode;
+
+14)select a.studentid,a.studentname,a.batchcode,a.place,a.phone from students a join batches b on a.batchcode=b.batchcode where a.place = 'CHENNAI' and extract(year from b.startdate)=2012;
+
+15)select a.studentid,a.studentname from students a join batches b on a.batchcode=b.batchcode where b.coursecode = 200;

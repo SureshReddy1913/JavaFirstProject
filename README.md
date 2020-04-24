@@ -1,1 +1,1 @@
-# JavaFirstProject
+# Second Week Assignment
