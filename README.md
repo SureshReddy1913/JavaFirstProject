@@ -1,1 +1,1 @@
-# JavaFirstProject
+# Check branches for weekly assignments
