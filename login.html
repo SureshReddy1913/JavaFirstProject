@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+<body>
+<div class="page-class">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" id="username" placeholder="username"/>
+        <input type="password" id="password" placeholder="password"/>
+        <button onclick="gen_report(); return false;">login</button>
+      </form>
+      <br>
+      <button onclick="see_report()">see report</button>
+      <br><br>
+      <table id="rep" >
+        <thead>
+            <tr>
+                <th>Report : </th>
+            </tr>
+        </thead>
+     </table>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,39 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+<title>Caluclator</title>
+<body>
+    <h1>Calculator:</h1>
+  <table class="cal-table"> 
+    <tr> 
+       <td colspan="3"><input type="text" id="result"></td> 
+       <td><input type="button" value="c" onclick="clear_fun()"/> </td> 
+    </tr> 
+    <tr>
+       <td><input type="button" value="1" onclick="take_input_fun('1')"/> </td> 
+       <td><input type="button" value="2" onclick="take_input_fun('2')"/> </td> 
+       <td><input type="button" value="3" onclick="take_input_fun('3')"/> </td> 
+       <td><input type="button" value="/" onclick="take_input_fun('/')"/> </td> 
+    </tr> 
+    <tr> 
+       <td><input type="button" value="4" onclick="take_input_fun('4')"/> </td> 
+       <td><input type="button" value="5" onclick="take_input_fun('5')"/> </td> 
+       <td><input type="button" value="6" onclick="take_input_fun('6')"/> </td> 
+       <td><input type="button" value="-" onclick="take_input_fun('-')"/> </td> 
+    </tr> 
+    <tr> 
+       <td><input type="button" value="7" onclick="take_input_fun('7')"/> </td> 
+       <td><input type="button" value="8" onclick="take_input_fun('8')"/> </td> 
+       <td><input type="button" value="9" onclick="take_input_fun('9')"/> </td> 
+       <td><input type="button" value="+" onclick="take_input_fun('+')"/> </td> 
+    </tr> 
+    <tr> 
+       <td><input type="button" value="." onclick="take_input_fun('.')"/> </td> 
+       <td><input type="button" value="0" onclick="take_input_fun('0')"/> </td> 
+       <td><input type="button" value="=" onclick="solve()"/> </td> 
+       <td><input type="button" value="*" onclick="take_input_fun('*')"/> </td> 
+    </tr> 
+ </table>
+</body>
