@@ -1,1 +1,1 @@
-# Check branches for weekly assignments
+WEEK-7 ASSIGNMENT
